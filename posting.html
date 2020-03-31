@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <pre id="list"></pre>
+    <script>
+        const endpoint = 'https://crudcrud.com/api/678378d29ccd46c486f2706e61cd2a5b';
+        const list = document.querySelector('#list');
+
+        async function postSomething(data) {
+            let response = await fetch(`${endpoint}/posts`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            let result = await response.json()
+            list.innerText = 'Success: ' + JSON.stringify(result, null, 2);
+        }
+
+        let dataToBePosted = {
+            example: "This right here",
+            test: "None defined"
+        }
+
+        postSomething(dataToBePosted);
+    </script>
+</body>
+
+</html>
