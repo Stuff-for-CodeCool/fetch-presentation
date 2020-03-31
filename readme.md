@@ -1,4 +1,4 @@
-# AJAX usin the Fetch API
+# AJAX using the Fetch API
 
 `AJAX`, or `Asynchronous JavaScript and XML`, is a method of getting information via JavaScript and using it in a page _without refreshing the page_.
 
