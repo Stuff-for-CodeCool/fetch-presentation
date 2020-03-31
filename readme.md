@@ -45,6 +45,7 @@ fetch(<API ENDPOINT HERE>)          // The URL you get information from / post i
     .then(data => data.json())      //  Convert the result to JSON
     .then(data => callback)         //  Callback function, which uses the data object somehow
     .catch(error => errorCallback)  //  Do something with the errors (optional)
+    .finally(error => callback)     //  This calllback always runs, regardless (optional)
 ```
 
 Now, you will notice the use of `then`, twice. Should the application be more complex, this chain of `then` statements may get quite long, which impacts both readability and maintainability.
