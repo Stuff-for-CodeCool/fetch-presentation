@@ -59,10 +59,12 @@ However, if your browser does support async/await, the code suddenly looks much 
 ```
 async function getUsersAsync(count) {
     let response = await fetch(`https://randomuser.me/api/?results=${count}`);
-    let data = await response.json()
-    let results = data.results;
-    for (let result of results) {
-        list.innerHTML += populateCard(result);
+    let data = await response.json();
+    if (response.ok) {
+        let results = data.results;
+        for (let result of results) {
+            list.innerHTML += populateCard(result);
+        }
     }
 }
 
